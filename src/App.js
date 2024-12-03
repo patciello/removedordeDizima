@@ -53,16 +53,8 @@ function App() {
 
   return (
     <div className="container">
-      <h1>Removedor de Dizima</h1>
-      <div>
-        <label>Valor Bruto</label>
-        <input
-          type="number"
-          step="0.01"
-          value={valorBruto}
-          onChange={(e) => setValorBruto(e.target.value)}
-        />
-      </div>
+      <h1>Calculadora de Produtor</h1>
+      <YourComponent />
       <div>
         <label>Quantidade</label>
         <input

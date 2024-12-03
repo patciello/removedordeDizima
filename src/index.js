@@ -1,57 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-
-const App = () => {
-  const [brutoValue, setBrutoValue] = useState('');
-  const [liquidoValue, setLiquidoValue] = useState('');
-  const [activeField, setActiveField] = useState(null);
-
-  const handleBrutoClick = () => {
-    setActiveField('bruto');
-    setLiquidoValue('');
-  };
-
-  const handleLiquidoClick = () => {
-    setActiveField('liquido');
-    setBrutoValue('');
-  };
-
-  return (
-    <div>
-      <div className="input-container">
-        <input
-          type="text"
-          placeholder="Valor Bruto"
-          value={brutoValue}
-          onClick={handleBrutoClick}
-          onChange={(e) => setBrutoValue(e.target.value)}
-          style={{
-            backgroundColor: activeField === 'bruto' ? 'white' : 'lightgray',
-            padding: '8px',
-            margin: '5px',
-            borderRadius: '4px',
-            border: '1px solid #ccc'
-          }}
-        />
-        <input
-          type="text"
-          placeholder="Valor Líquido (com desconto FUNRURAL/SENAR)"
-          value={liquidoValue}
-          onClick={handleLiquidoClick}
-          onChange={(e) => setLiquidoValue(e.target.value)}
-          style={{
-            backgroundColor: activeField === 'liquido' ? 'white' : 'lightgray',
-            padding: '8px',
-            margin: '5px',
-            borderRadius: '4px',
-            border: '1px solid #ccc'
-          }}
-        />
-      </div>
-    </div>
-  );
-};
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -59,3 +10,8 @@ root.render(
     <App />
   </React.StrictMode>
 );
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
