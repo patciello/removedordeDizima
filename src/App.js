@@ -85,25 +85,24 @@ function App() {
               </tr>
             </thead>
             <tbody>
-              {Object.entries(gruposValores).map(([valor, quantidade, valorTotal], index) => (
-                <tr key={index}>
-                  <td>{quantidade}</td>
-                  <td>
-                    R${' '}
-                    {parseFloat(valor).toLocaleString('pt-BR', {
-                      minimumFractionDigits: 2,
-                      maximumFractionDigits: 2,
-                    })}
-                  </td>
-                  <td>
-                    R${' '}
-                    {parseFloat(valorTotal).toLocaleString('pt-BR', {
-                      minimumFractionDigits: 2,
-                      maximumFractionDigits: 2,
-                    })}
-                  </td>
-                </tr>
-              ))}
+            {Object.entries(gruposValores).map(([valor, dados], index) => (
+  <tr key={index}>
+    <td>{dados.quantidade}</td>
+    <td>
+      R$ {parseFloat(valor).toLocaleString('pt-BR', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      })}
+    </td>
+    <td>
+      R$ {(dados.quantidade * parseFloat(valor)).toLocaleString('pt-BR', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      })}
+    </td>
+  </tr>
+))}
+
             </tbody>
           </table>
 
