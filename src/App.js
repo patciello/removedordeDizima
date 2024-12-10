@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { dividirValor, agruparValores } from './calculations';
 import './App.css';
+import YourComponent from './YourComponent';
 
 function App() {
   const [valorBruto, setValorBruto] = useState('');
@@ -53,16 +54,7 @@ function App() {
 
   return (
     <div className="container">
-      <h1>Removedor de Dizima</h1>
-      <div>
-        <label>Valor Bruto</label>
-        <input
-          type="number"
-          step="0.01"
-          value={valorBruto}
-          onChange={(e) => setValorBruto(e.target.value)}
-        />
-      </div>
+      <h1>Calculadora de Produtor</h1>
       <div>
         <label>Quantidade</label>
         <input
@@ -145,4 +137,6 @@ function App() {
 }
 
 export default App;
+
+
 
