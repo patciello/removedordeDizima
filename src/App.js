@@ -74,22 +74,30 @@ function App() {
       <button onClick={calcular}>Calcular</button>
 
       {Object.keys(gruposValores).length > 0 && (
-        <div>
+        <div className="resultado">
           <h2>Valores Agrupados</h2>
           <table>
             <thead>
               <tr>
                 <th>Quantidade</th>
                 <th>Valor</th>
+                <th>Total</th>
               </tr>
             </thead>
             <tbody>
-              {Object.entries(gruposValores).map(([valor, quantidade], index) => (
+              {Object.entries(gruposValores).map(([valor, quantidade, valorTotal], index) => (
                 <tr key={index}>
                   <td>{quantidade}</td>
                   <td>
                     R${' '}
                     {parseFloat(valor).toLocaleString('pt-BR', {
+                      minimumFractionDigits: 2,
+                      maximumFractionDigits: 2,
+                    })}
+                  </td>
+                  <td>
+                    R${' '}
+                    {parseFloat(valorTotal).toLocaleString('pt-BR', {
                       minimumFractionDigits: 2,
                       maximumFractionDigits: 2,
                     })}

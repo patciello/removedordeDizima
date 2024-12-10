@@ -29,9 +29,15 @@ export function dividirValor(valorBruto, quantidade) {
     valoresPorAnimal.forEach((valor) => {
       const valorStr = valor.toFixed(2);
       if (grupos[valorStr]) {
-        grupos[valorStr] += 1;
+        grupos[valorStr] = {
+          quantidade: grupos[valorStr].quantidade + 1,
+          valorTotal: grupos[valorStr].valorTotal + valor
+        };
       } else {
-        grupos[valorStr] = 1;
+        grupos[valorStr] = {
+          quantidade: 1,
+          valorTotal: valor
+        };
       }
     });
   
