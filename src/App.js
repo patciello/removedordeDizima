@@ -55,7 +55,6 @@ function App() {
   return (
     <div className="container">
       <h1>Calculadora de Produtor</h1>
-      <YourComponent />
       <div>
         <label>Quantidade</label>
         <input
