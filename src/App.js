@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import { dividirValor, agruparValores } from './calculations';
 import './App.css';
-import YourComponent from './YourComponent';
 
 function App() {
   const [valorBruto, setValorBruto] = useState('');
@@ -63,6 +62,15 @@ function App() {
           onChange={(e) => setQuantidade(e.target.value)}
         />
       </div>
+      <div>
+        <label>Valor Bruto</label>
+        <input
+          type="number"
+          step="0.01"
+          value={valorBruto}
+          onChange={(e) => setValorBruto(e.target.value)}
+        />
+        </div>
       <button onClick={calcular}>Calcular</button>
 
       {Object.keys(gruposValores).length > 0 && (
